@@ -1,0 +1,9 @@
+[package]
+description = "A simple linked list-based implementation of the Stack data type"
+edition = "2021"
+license = "MIT"
+name = "simple-stack"
+repository = "https://github.com/MattTheNub/simple-stack.git"
+version = "0.1.0"
+
+[dependencies]
