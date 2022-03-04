@@ -1,3 +1,5 @@
+use std::fmt::{self, Debug};
+
 #[derive(Clone)]
 pub struct Stack<T> {
 	head: Option<Box<Node<T>>>,
@@ -120,6 +122,23 @@ impl<T> Stack<T> {
 impl<T> Default for Stack<T> {
 	fn default() -> Self {
 		Self::new()
+	}
+}
+
+impl<T> Debug for Stack<T>
+where
+	T: Debug,
+{
+	fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+		let mut vec = Vec::with_capacity(self.size);
+		let mut cur_node = &self.head;
+		while let Some(node) = cur_node {
+			vec.push(&node.val);
+			cur_node = &node.next;
+		}
+		vec.reverse();
+
+		f.debug_list().entries(vec).finish()
 	}
 }
 
