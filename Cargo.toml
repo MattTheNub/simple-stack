@@ -4,6 +4,6 @@ edition = "2021"
 license = "MIT"
 name = "simple-stack"
 repository = "https://github.com/MattTheNub/simple-stack.git"
-version = "0.1.0"
+version = "0.2.0"
 
 [dependencies]
